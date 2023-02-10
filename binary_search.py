@@ -13,3 +13,29 @@ def binary_search(list, item) :
     else :
       low = mid + 1 #if guess is too low, mid value + 1, low becomes mid + 1, is added to high, new value then divided by 2, equals new mid
   return None
+
+'''
+Exercises
+
+1.1 Suppose you have a sorted list of 128 names, and you're searching through it using binary search. What's the maximum number of steps it would take?
+
+1) 128 / 2 = 64 
+2) 64 / 2 = 32 
+3) 32 / 2 = 16 
+4) 16 / 2 = 8
+5) 8 / 2 = 4
+6) 4 / 2 = 2
+7) 2 / 2 = 1
+
+1.2 Suppose you double the size of the list. What's the maximum number of steps now?
+
+1) 256 / 2 = 128
+2) 128 / 2 = 64 
+3) 64 / 2 = 32 
+4) 32 / 2 = 16 
+5) 16 / 2 = 8
+6) 8 / 2 = 4
+7) 4 / 2 = 2
+8) 2 / 2 = 1
+
+'''
