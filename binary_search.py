@@ -1,18 +1,32 @@
-def binary_search(list, item) :
-'''A function for finding an item in a sorted list using a binary search'''
-  low = 0 #the lower half of the list
-  high = len(list) - 1 #the upper half of the list
-  
-  while low <= high :
-    mid = (low + high) / 2 #the first guess will split the list in half, each subsequent run will half the resulting list until the item is found 
-    guess = list(mid)
-    if guess == item :
-      return mid #search stops if correct
-    if guess > item :
-      high = mid - 1 #if guess is too high, mid value - 1, high becomes mid - 1, is added to low, new value then divided by 2, equals new mid
-    else :
-      low = mid + 1 #if guess is too low, mid value + 1, low becomes mid + 1, is added to high, new value then divided by 2, equals new mid
+def binary_search(list, item):
+  ''' a function to find a value in a list using a binary search and return index'''
+
+  sort_list = sorted(list)  # sort the list incase it isn't already sorted
+
+  # set low and high to keep track of where the search is
+
+  low = 0
+  high = len(list) - 1  # n - 1
+
+  #  while the item hasn't been found
+  while low <= high:
+    mid = (low + high) // 2  # (0 + len(list) - 1) // 2 (round down)
+    guess = sort_list[mid]  # find the middle value in the list
+
+    if guess == item:
+      return mid  # found the item
+    if guess > item:
+      high = mid - 1  # guess too high, item will be in the bottom half of the list
+    else:
+      low = mid + 1  # guess too low, item will be in the upper half of the list
+
   return None
+
+my_list = [5, 7, 9, 11, 1, 3]
+other_list = [1, 3, 5, 7, 9, 11, 13]
+
+print(binary_search(my_list, 7))
+print(binary_search(other_list, 5))
 
 '''
 Exercises
